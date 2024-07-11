@@ -1,0 +1,937 @@
+body{
+  font-family: 'Montserrat', normal;
+}
+/* carrusel inicial */
+  .noticiasMedellinCarousel {
+	margin-top: 65px; 
+  }
+  .mainCarrusel {
+    width: auto;
+    height: 700px;
+    position: relative;
+    background-color: #000;
+  }
+  .imgMainCarusel img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Esto mantendrá la proporción y recortará la imagen para que se ajuste al contenedor sin deformarla */
+    opacity: 0.9;
+  }
+   /* Asegúrate de que el contenedor del carrusel también tenga dimensiones relativas */
+  .carousel-item {
+    height: 100%;
+  }
+  #titulo{
+    font-size: 50px;
+    color: #fff;
+    font-family: 'Roboto', sans-serif;
+    font-style:normal;
+    font-weight: bold;
+    background-color: rgba(0, 0, 0, 0.6);
+    }
+    #tituloFecha {
+      font-size: 16px; 
+      color: #fff;
+      font-weight: bold;/* Tamaño de letra de texto */
+      background-color: rgba(0, 0, 0, 0.6);
+    }
+    .carousel-caption{
+      position: absolute;
+      width: 100vw;
+      height: 400px;
+      top: 400px;
+      left: 10px;
+      text-align: left;
+      z-index: 0;
+      padding: 20px 20px 20px 20px;
+    } 
+  /* fin carrusel inicial */
+  /* section varias categorias y publicidad */
+  #titulo1{
+    color: #fff;
+    font-family: 'Roboto', sans-serif;
+    font-style:normal;
+    font-weight: bold;
+    font-size: 25px;
+    line-height: 32px;
+    background-color: rgba(0, 0, 0, 0.6);
+    }
+    #tituloMultimedia{
+      color: #fff;
+      font-family: 'Roboto', sans-serif;
+      font-style:normal;
+      font-weight: bold;
+      font-size: 25px;
+      line-height: 32px;
+      background-color: rgba(0, 0, 0, 0.6);
+      margin-top: 250px;
+    }
+    #tituloFecha1 {
+      font-size: 10px; 
+      color: #fff;
+      font-weight: bold;/* Tamaño de letra de texto */
+    }
+  .carousel-caption1{
+    position: absolute;
+    width: 530px;
+    height: 450px;
+    top: 250px;
+    left: 10px;
+    text-align: left;
+    z-index: 0;
+  } 
+#tituloDeportes{
+  color: black;
+}
+/* secondCarrusel */
+  .secondCarrusel{
+    width: 728px;
+    height: 90px;
+    margin-left: 310px;
+    position: relative;
+  }
+  .imgSecondCarusel img{
+    width: 728px;
+    height: 90px;
+    position: absolute;
+    left: 0px;
+  }
+/* endSecondCarrusel */
+/* navar */
+.navbar {
+position: fixed;
+  }
+ .navbar-brand{
+    display: flex;
+    align-items: center;
+  }
+.navbar-brand img {
+  width: auto;
+  height: 55px;
+  object-fit: cover;
+	margin-right: 10px;
+	margin-left: 10px;
+	}
+.nav-link {
+  margin-right: 15px;
+padding-top: 20px;
+height: 60px;
+align-items: center;
+  }
+  .socialMedia{
+    margin: 0px 0px 0px 60px ;
+  }
+  /* Show the dropdown menu when the parent is hovered */
+.nav-item.dropdown:hover .dropdown-menu {
+    display: block;
+}
+  /* endNavar */
+  /* separador */
+  .gradient-line {
+    height: 1px;
+    border: none;
+    background-image: linear-gradient(to right, #f00, #0f0, #00f);
+    }
+     /* endseparador */
+  /* noticias */
+    .image-noticias img{
+      width: 100%;
+      height: 270px;
+      object-fit: cover;
+    }
+    .noticiasTitulo{
+      position: absolute;
+      width: auto;
+      font-size: 18px;
+      font-weight: bold;
+      left: 0px;
+      bottom: 0px;
+      z-index: 4;
+      background-color: rgba(88, 88, 88, 0.6);
+      padding: 5px 0px 50px 10px;
+    }
+    #h5-landing {
+      text-decoration: none; /* Elimina el subrayado */
+      color: #fff; /* Cambia el color del enlace a negro (#000) */
+  }
+  /* endnoticias */
+#footer{
+  margin-top: 600px;
+}
+/* Estilos para los controles del segundo carrusel */
+#carouselExampleControls2 .carousel-control-prev-icon{
+  background-color: rgba(88, 88, 88, 0.9);
+}
+#carouselExampleControls2 .carousel-control-next-icon {
+  background-color: rgba(88, 88, 88, 0.9);
+  position: absolute;
+}
+#carouselPublicidad{
+  padding-bottom: 5px;
+}
+.edicionesItemImg img{
+height: 400px;
+object-fit: cover;
+} 
+.categorias{
+  background-color: #fff;
+}
+.categorias .card {
+  height: 400px; /* Cambia la altura de las tarjetas */
+}
+.ediconesCarrusel{
+  height: 398px;
+}
+#carrucelEdiciones .carousel-control-prev-icon{
+  background-color: rgba(0, 0, 0, 1);
+  height: 30px;
+  width: 30px;
+  position: absolute;
+  top:15px;
+  left: 450px;
+}
+#carrucelEdiciones .carousel-control-next-icon {
+  background-color: rgba(0, 0, 0, 1);
+  height: 30px;
+  width: 30px;
+  position: absolute;
+  top:15px;
+}
+#carrucelEdiciones1 .carousel-control-prev-icon{
+  background-color: rgba(0, 0, 0, 1);
+  height: 30px;
+  width: 30px;
+  position: absolute;
+  top:15px;
+  left: 450px;
+}
+#carrucelEdiciones1 .carousel-control-next-icon {
+  background-color: rgba(0, 0, 0, 1);
+  height: 30px;
+  width: 30px;
+  position: absolute;
+  top:15px;
+}
+/* EndContenedor Ediciones */
+/* idivudual news */
+#individualNews{
+  margin-top: 60px;
+}
+.img-ediciones {
+  width: 320px;
+}
+/* end idivudual news */
+    footer {
+      background-color: black;
+    }
+    footer p {
+      color: white;
+    }
+    footer img {
+      padding: 50px 20px 20px 20px;
+    }
+    .socialMediaFooter {
+      padding: 50px 20px 20px 20px;
+    }
+	.controls {
+		width: 42px;
+		height: 42px;
+		padding: 10px;
+		border-radius: 0;
+		cursor: pointer;
+		background-color: rgba(0,0,0,0);
+	}
+.controls img {
+    width: 100%; /* Ajustar el ancho de las imágenes al 100% del contenedor */
+  height: auto; /* Ajustar la altura automáticamente */
+}
+  #r{
+    border: 2px solid white; /* Agregar un borde blanco de 2px */
+    border-radius: 50%;
+  }
+  #l{
+    border: 2px solid white; /* Agregar un borde blanco de 2px */
+    border-radius: 50%;
+  }
+	.carrousel {
+		width: auto;
+		margin: auto;
+		height: 450px;
+		overflow:hidden;
+	}
+	.controls:hover {
+		background-color: rgba(105, 105, 105, 0.5);
+	}
+	.item {
+    object-fit: contain;
+		width: 325px;
+		height: 520px;
+		float: left;
+		margin-left: 15px;
+		color: #fff;
+		font-size: 40px;
+		text-align: center;
+		border-radius: 5px;
+		cursor: pointer;
+  transition: 1s all;
+    position: relative;
+    overflow: hidden;
+		/*box-shadow: 0 9px 10px rgba(6,6,7,.3);*/
+	}
+	.control-carrusel{
+		position: absolute;
+		width: auto;
+		margin-top: 190px;
+	}
+  .control-c-left{
+    position: absolute;
+    left: 50px;
+  }
+  .control-c-right{
+    position: absolute;
+    left: 1270px;
+  }
+	.tapa {
+	  width: 12000px;/* 	change if the size is >     12000  :) */
+		transition: .9s all;
+	}
+	.item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(99, 99, 99, 0.9);
+    opacity: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.3s;
+  }
+  .item:hover .overlay {
+    opacity: 1;
+  }
+  .dropdown-column {
+    position: absolute;
+    top: 55px;
+    left: -325px;
+    width:1320px; /* Ancho deseado para la columna adicional */
+  }
+  .pagination {
+    text-align: center;
+    margin-top: 20px;
+    padding-left: 100px;
+}
+.pagination ul {
+    list-style: none;
+    padding: 0;
+}
+.pagination li {
+    display: inline-block;
+    margin-right: 10px;
+}
+.pagination a {
+    text-decoration: none;
+    padding: 5px 10px;
+    border: 1px solid #333;
+    background-color: #ffffff;
+    color: #333;
+}
+.pagination a:hover {
+    background-color: #333;
+    color: #ffffff;
+}
+#imagen-category{
+ width: 310px;
+ height: auto;
+  object-fit: cover;
+}
+.category-right-bar{
+  position: absolute;
+  top: 815px;
+  right: 13px;
+  width: 400px;
+  height: 1900px;
+  overflow: hidden;
+  /* display: none; */
+}
+#h4-category{
+  color: #000;
+  display: block;
+  font-size: 1.5rem; /* Tamaño de fuente similar al de h4 */
+  font-weight: bold; /* Peso de fuente similar al de h4 */
+  color: #333; /* Color de texto similar al de h4 */
+}
+#h4-category:hover {
+  color: rgb(81, 179, 81); /* Change the color to your desired color */
+}
+.category-main{
+  padding-bottom: 20px;
+}
+.contenedor-publicacion{
+  margin-left: 15px;
+}
+.img-category img {
+  width: 550px; /* La imagen se ajustará al ancho del contenedor en dispositivos móviles */
+    height: auto;
+}
+a#category-titulo {
+  color: #fff; /* Cambia el color del texto a blanco */
+  text-decoration: none; /* Elimina la subrayado predeterminado de los enlaces */
+  /* Agrega otros estilos de enlace según tus preferencias */
+}
+.titulo-category{
+  position: absolute; /* Establece la posición absoluta para el título */
+  bottom: 0; /* Coloca el título en la parte superior del contenedor */
+  left: 0; /* Coloca el título en la parte izquierda del contenedor */
+  padding: 10px; /* Agrega un relleno alrededor del título para que se vea mejor */
+  width: 100%; /* Asegura que el título ocupe todo el ancho del contenedor */
+  box-sizing: border-box; /* Incluye el relleno en el ancho total del título */
+  font-size: 30px;
+	color: #fff;
+  font-family: 'Roboto', sans-serif;
+  font-style:normal;
+  font-weight: bold;
+  z-index: 2;
+}
+.img-category::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4); 
+  z-index: 1; 
+}
+.contenedor-category {
+  display: flex;
+  height: 100%; /* Opcional: ajusta la altura del contenedor según tus necesidades */
+}
+.img-category img {
+  max-width: 100%; /* Asegura que la imagen se ajuste al ancho del contenedor */
+  height: 400px; /* Establece una altura fija para todas las imágenes */
+  transition: transform 0.3s ease; /* Agrega una transición suave para el efecto de zoom */
+}
+.img-category img:hover {
+  transform: scale(1.1); /* Escala la imagen al 110% cuando el ratón está sobre ella */
+}
+.adverting_category{
+  padding-top: 100px;
+padding-left: 50px;
+}
+.contenedor-rgrafico {
+  margin-right: -25px; /* Ajusta este valor según tu preferencia para reducir el espacio entre las columnas */
+  margin-left: 0px; /* Ajusta este valor según tu preferencia para reducir el espacio entre las columnas */
+  height: 380px; /* Alto deseado del contenedor */
+}
+.contenedor-rgrafico::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 14px;
+  width: 90%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4); 
+  z-index: 1; 
+}
+.contenedor-rgrafico img {
+  position: relative;
+  width: 257px;
+  height: 100%;
+  object-fit: cover; /* Ajusta la imagen al contenedor, recortando si es necesario */
+  transition: transform 0.3s; /* Agrega una transición suave para el efecto de zoom */
+}
+#titulo-reportajes {
+  position: absolute; 
+  width: 250px;
+  height: 90px;
+  top: 80%;
+  /* Alinear el título horizontalmente en el centro */
+  transform: translate(-50%, -50%); /* Centrar el título correctamente */
+  font-family: 'Roboto', sans-serif;
+  text-align: left;
+  font-style:normal;
+  font-weight: bold;
+  font-size: 22px;
+  line-height: 1.4;
+margin-left: 7px;
+   text-decoration: none; /* Quitar subrayado del enlace */
+  color: #fff; /* Color del texto */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  z-index: 2; /* Colocar la capa sobre la imagen */
+}
+#titulo-reportajes:hover {
+  background-color: rgba(0, 0, 0, 0.7); /* Cambiar el color de fondo al pasar el mouse */
+}
+.imagen-rgrafico:hover {
+  transform: scale(1.1); /* Realiza un zoom al 120% del tamaño original al hacer hover */
+}
+.contenido-columna {
+  /* Estilos adicionales para el contenido de la columna */
+  text-align: center; /* Alinear el contenido al centro */
+  padding: 20px; /* Espaciado interno */
+}
+#category_category{
+  color: #000;
+  margin-right: 10px;
+}
+.post-info {
+  display: flex; /* Hace que los elementos se muestren en la misma fila */
+  align-items: center; /* Alinea verticalmente los elementos */
+  margin-top: 15px; /* Agrega margen superior para separarlos */
+  margin-bottom: 25px;
+}
+.post-date{
+  color:#979696 ;
+}
+.carruselPublicidad img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+/* media query */
+@media (max-width: 768px) {
+  .category-right-bar,#a-category,#p-category {
+    display: none;
+     /* Oculta la sección en dispositivos con un ancho de pantalla máximo de 768px */
+  }
+  #category_category{
+   font-size: 10px;
+  }
+  .post-date{
+    font-size: 10px;
+  }
+  #imagen-category{
+    width: 110px; /* La imagen se ajustará al ancho del contenedor en dispositivos móviles */
+    height: auto;
+  }
+  #contenedor-category{
+    margin-left: -10px;
+  }
+  #h4-category{
+    font-size: 12px;
+  }
+  .contenedor-publicacion{
+    margin-left: 0px;
+  }
+  .control-c-right{
+    left: 260px;
+  }
+}
+.titulo-section{
+  text-align: center;
+}
+@media only screen and (max-width: 768px) {
+  #logoFooter{
+    width: 300px;
+    height: auto;
+    }
+  #carrucelEdiciones .carousel-control-prev-icon{
+    position: absolute;
+    top:15px;
+    left: 40px;
+  }
+  #carrucelEdiciones .carousel-control-next-icon {
+    position: absolute;
+    top:15px;
+    right: 50px;
+  }
+  #carrucelEdiciones1 .carousel-control-prev-icon{
+    position: absolute;
+    top:15px;
+    left: 40px;
+  }
+  #carrucelEdiciones1 .carousel-control-next-icon {
+    position: absolute;
+    top:15px;
+    right: 50px;
+  }
+  .img-ediciones {
+    width: 220px;
+  }
+  .carousel-caption1{
+    width: auto;
+  padding: 0px 50px 0px 10px;
+  } 
+  .contenedor-rgrafico {
+    height: auto; /* Alto deseado del contenedor */
+    margin-bottom: 15px;
+  }
+  .contenedor-rgrafico img {
+      width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+  .contenedor-rgrafico::before {
+  width: 94%;
+}
+.categorias .card {
+   height: 430px; /* Cambia la altura de las tarjetas */
+}
+.adverting_category{
+  padding-top: 90px;
+padding-left: 10px;
+}
+.pagination {
+  margin-top: 30px;
+  padding-left: 10px;
+}
+.publicidad{
+  height: 70px;
+}
+}
+    @media (max-width: 800px)  {
+      .mainCarrusel {
+    height: 340px;
+    }
+      .imgMainCarusel img {
+    height: 340px;
+      }
+      .carousel-caption {
+          top: 150px;
+        } 
+        #titulo {
+          font-size: 20px; /* Tamaño de letra de título */
+        }
+        #tituloFecha {
+          font-size: 15px; /* Tamaño de letra de texto */
+        }
+        .navbar-brand img {
+         height: 40px;
+      }
+    }
+    @media (max-width: 950px)  {
+      .secondCarrusel{
+        width: auto;
+        height: 90px;
+        margin-left: 0px;
+       position: relative;
+     }
+    }
+/* end media query */
+        /* Estilos CSS personalizados */
+        .custom-button {
+       font-size: 12px;
+          transition: background-color 0.3s ease; /* Transición para el cambio de color en hover */
+          border: 1px solid black; /* Agregar borde negro */
+      }
+      .custom-button:hover {
+          background-color: green; /* Cambia el color de fondo en hover a verde */
+          color: white; /* Cambia el color del texto en hover a blanco */
+      }
+      .h2_categoria{
+        font-size: 40px;
+      font-weight: bold;
+      }
+      .full-width-section {
+        background-color: #000; /* Fondo negro */
+        color: #fff; /* Texto blanco */
+        text-align: center; /* Centrar el texto */
+        padding: 50px 0; /* Espaciado interno */
+      }
+   /* Styles for the search form */
+#searchform {
+  display: flex;
+  align-items: center;
+}
+#s {
+  margin-right: 10px;
+}
+#searchsubmit {
+  background-color: #0073aa;
+  color: #fff;
+  border: none;
+  padding: 8px 12px;
+  cursor: pointer;
+}
+/* Estilos para las imágenes de búsqueda */
+.image-busqueda img {
+  height: 200px; /* Establece la altura fija que desees */
+  object-fit: cover; /* Evita que la imagen se deforme y cubre completamente el contenedor */
+}
+/* Estilos para las imágenes de búsqueda */
+.image-busqueda img {
+  height: 200px; /* Establece la altura fija que desees */
+  object-fit: cover; /* Evita que la imagen se deforme y cubre completamente el contenedor */
+}
+.image-container {
+  height: 250px;
+  width: 100%;
+  margin-top: 50px;
+  overflow: hidden;
+  position: relative;
+}
+.boton_compartir {
+  position: relative;
+  left: 225px;
+}
+.contenedor_redes{
+  position: relative;
+  left: 200px;
+  overflow: hidden; /* Oculta cualquier parte de las imágenes que exceda el contenedor */
+  width: 150px;
+}
+.image {
+  width: 100%; /* Ajusta el tamaño de la imagen al 100% del contenedor */
+  height: auto;
+    position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+@media (max-width: 767px) {
+  .image-container {
+      height: 100px;
+      margin-top: 10px;
+  }
+   .boton_compartir {
+    position: relative;
+    left: 12px;
+   
+  }
+  .contenedor_redes{
+    position: relative;
+    bottom: 40px;
+   
+  }
+  .publicidad_ppal{
+    /* Cambia el tamaño de las columnas para dispositivos móviles */
+    width: 100%;
+    margin-top: 70px;/* Añade espacio debajo de las imágenes */
+  }
+ 
+}
+/* contendior silder reportajes graficos */
+
+.contenedor_carrusel{
+  height: 400px; /* Altura fija del contenedor del carrusel */
+  overflow: hidden; /* Oculta cualquier contenido que exceda la altura del contenedor */
+}
+.contenedor_carrusel_item img{
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+}
+
+.item-publicidad img {
+  height: 400px; /* Ajusta a la altura deseada */
+/* Esto hará que la imagen cubra el área sin perder su relación de aspecto */
+}
+/* Estilos para las miniaturas */
+#miniaturas-carrusel {
+  margin-top: 10px; /* Espaciado superior */
+}
+.miniatura {
+  width: 100px; /* Ajusta el ancho de las miniaturas según sea necesario */
+  height: auto; /* Ajusta la altura de las miniaturas según sea necesario */
+  margin-right: 5px; /* Espaciado entre miniaturas */
+  border: 1px solid #ddd; /* Borde alrededor de las miniaturas */
+  cursor: pointer; /* Cambia el cursor al pasar sobre las miniaturas */
+  object-fit: contain; /* Ajusta la imagen para que cubra completamente el contenedor sin deformarse */
+ 
+}
+/* Estilo para la miniatura activa */
+.miniatura.active {
+  border-color: #007bff; /* Cambia el color del borde para indicar la miniatura activa */
+}
+/* Estilos para el carrusel */
+#mi-carrusel {
+  height: 400px; /* Ajusta la altura del carrusel según sea necesario */
+  overflow: hidden; /* Oculta cualquier parte de las imágenes que exceda el contenedor */
+}
+#miniaturas-contenedor{
+  overflow: hidden;
+}
+.carousel-inner-reportajes {
+  overflow: hidden;
+}
+.carousel-item-reportajes img {
+ 
+  width: 100%;
+  height: auto;
+  object-fit: cover; /* Ajusta la imagen para que cubra completamente el contenedor sin deformarse */
+}
+.miniatura.active {
+  border-color: #007bff; /* Cambia el color del borde para indicar la miniatura activa */
+  transform: scale(1.2); /* Puedes ajustar el valor según tus preferencias para resaltar la miniatura activa */
+}
+.carousel-item-reportajes::after {
+  content: ''; /* Contenido del pseudo-elemento */
+  position: absolute; /* Posiciona el pseudo-elemento de manera absoluta dentro del .carousel-item */
+  bottom: 0; /* Coloca el pseudo-elemento en la parte inferior del .carousel-item */
+  left: 0;
+  width: 100%; /* Ajusta el ancho del pseudo-elemento al 100% del .carousel-item */
+  height: 30%; /* Ajusta la altura del pseudo-elemento según sea necesario */
+  background: rgba(0, 0, 0, 0.5); /* Color de fondo con transparencia (aquí, negro con 50% de opacidad) */
+  z-index: 1; /* Asegura que el pseudo-elemento esté por encima de la imagen */
+  
+}
+
+.control-carrusel-n {
+    top: auto; /* Elimina la posición superior predeterminada */
+    bottom: 10px; /* Ajusta la posición inferior según sea necesario */
+   
+    
+}
+.control-carrusel-p{
+  top: auto; /* Elimina la posición superior predeterminada */
+    bottom: 10px;
+    left: 580px;
+}
+
+/* videos */
+.news-section {
+  background-color: #f8f9fa;
+
+}
+
+.news-card {
+  background: #fff;
+  border: none;
+  margin-bottom: 15px;
+}
+
+.news-card img {
+  max-height: 520px;
+  object-fit: cover;
+}
+
+.news-card-body {
+  padding: 10px;
+}
+
+.play-icon {
+  position: absolute;
+  top: 19px;
+  left: 19px;
+  color: #fff;
+  font-size: 54px;
+}
+.play-icon1{
+  position: absolute;
+  top: 10px;
+  left: 19px;
+  color: #fff;
+  font-size: 44px;
+}
+.play-icon1:hover {
+  color: #ff0000; /* Cambia el color al pasar el ratón por encima */
+}
+.play-icon:hover {
+  color: #ff0000; /* Cambia el color al pasar el ratón por encima */
+}
+.news-title {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.5); /* Fondo semi-transparente para mejorar la legibilidad */
+  color: white; /* Puedes ajustar el color del texto según tus necesidades */
+  padding: 15px;/* Ajusta el relleno según tus necesidades */
+  margin: 0;
+  font-weight: bold;
+}
+.news-categoria {
+    position: absolute;
+    bottom: 50px;
+    left: 0;
+    right: 0;
+
+    color: white;
+    padding: 10px;
+    margin: 0;
+}
+
+.news-card:hover {
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.btn-play {
+  background-color: #dc3545;
+  color: #fff;
+  padding: 5px 15px;
+  border-radius: 5px;
+  font-weight: bold;
+}
+.news-card-body {
+  display: flex;
+  flex-direction: column;
+}
+
+.card-img-top1 {
+  width: 100%; /* Ajusta el ancho de la imagen según tus necesidades */
+  height: 114px;
+}
+
+.news-title1 {
+  margin-top: 10px; /* Ajusta el margen superior del título según tus necesidades */
+  font-size: 14px;
+  text-decoration: none;
+}
+.news-title1 a {
+  text-decoration: none; /* Aplica la propiedad de no subrayado solo a los enlaces dentro de .news-title1 */
+}
+
+/* Estilos para el video incrustado */
+.wp-block-embed.is-provider-youtube{
+  max-width: 100%; /* Hace que el video sea responsivo y ocupe el 100% del contenedor padre */
+  margin-bottom: 20px; /* Espacio en la parte inferior para separar el video de otros elementos */
+}
+.wp-block-embed.wp-block-embed-youtube .wp-block-embed__wrapper {
+  /* Tu estilo personalizado aquí */
+  position: relative;
+  overflow: hidden;
+  padding-bottom: 56.25%; /* Proporción de aspecto 16:9 para videos de YouTube */
+  height: 0;
+}
+/* Estilos para el iframe del video dentro del contenedor */
+.wp-block-embed.is-provider-youtube iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.card-img-top-videos{
+  height: 200px;
+}
+.card-videos{
+  height: 100px;
+}
+.card-title a {
+  text-decoration: none; /* Quitar el subrayado */
+  color: inherit; /* Mantener el color del texto por defecto */
+}
+.titulo-videos{
+   font-size: 46px;
+  font-weight: bolder;
+  line-height: 56px;
+ padding-bottom: 25px;
+}
+.contenedor-videos h4 {
+  font-size: 20px; /* Tamaño de fuente */
+  line-height: 46px; /* Altura de línea */
+  color: #333; /* Color de texto */
+  /* Agrega más estilos según tus necesidades */
+}
+@media only screen and (max-width: 767px) {
+  /* Ajusta el tamaño del texto para pantallas más pequeñas */
+  .titulo-videos {
+    font-size: 26px; /* Puedes ajustar este valor según sea necesario */
+    line-height: 36px; /* Ajusta el line-height si es necesario */
+    padding-bottom: 15px; /* Ajusta el padding-bottom si es necesario */
+  }
+  .contenedor-videos h4 {
+    font-size: 16px; /* Tamaño de fuente */
+    line-height: 16px; /* Altura de línea */
+    color: #333; /* Color de texto */
+    /* Agrega más estilos según tus necesidades */
+  }
+}
+
+/* fin Estilos para el video incrustado */

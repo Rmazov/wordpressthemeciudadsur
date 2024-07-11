@@ -1,0 +1,1 @@
+<h1>template for front-page</h1>
