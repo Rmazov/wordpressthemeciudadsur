@@ -172,6 +172,7 @@ align-items: center;
 .edicionesItemImg img{
 height: 400px;
 object-fit: cover;
+width: 100%;
 } 
 .categorias{
   background-color: #fff;
@@ -181,6 +182,7 @@ object-fit: cover;
 }
 .ediconesCarrusel{
   height: 398px;
+  overflow: hidden;
 }
 #carrucelEdiciones .carousel-control-prev-icon{
   background-color: rgba(0, 0, 0, 1);
@@ -188,7 +190,9 @@ object-fit: cover;
   width: 30px;
   position: absolute;
   top:15px;
-  left: 450px;
+  left: 400px;
+
+  
 }
 #carrucelEdiciones .carousel-control-next-icon {
   background-color: rgba(0, 0, 0, 1);
@@ -203,7 +207,7 @@ object-fit: cover;
   width: 30px;
   position: absolute;
   top:15px;
-  left: 450px;
+  left: 400px;
 }
 #carrucelEdiciones1 .carousel-control-next-icon {
   background-color: rgba(0, 0, 0, 1);
@@ -522,6 +526,7 @@ margin-left: 7px;
   .control-c-right{
     left: 260px;
   }
+  
 }
 .titulo-section{
   text-align: center;
@@ -628,12 +633,7 @@ padding-left: 10px;
         font-size: 40px;
       font-weight: bold;
       }
-      .full-width-section {
-        background-color: #000; /* Fondo negro */
-        color: #fff; /* Texto blanco */
-        text-align: center; /* Centrar el texto */
-        padding: 50px 0; /* Espaciado interno */
-      }
+   
    /* Styles for the search form */
 #searchform {
   display: flex;
@@ -718,10 +718,6 @@ padding-left: 10px;
   object-fit: cover;
 }
 
-.item-publicidad img {
-  height: 400px; /* Ajusta a la altura deseada */
-/* Esto hará que la imagen cubra el área sin perder su relación de aspecto */
-}
 /* Estilos para las miniaturas */
 #miniaturas-carrusel {
   margin-top: 10px; /* Espaciado superior */
@@ -913,25 +909,38 @@ padding-left: 10px;
   line-height: 56px;
  padding-bottom: 25px;
 }
-.contenedor-videos h4 {
-  font-size: 20px; /* Tamaño de fuente */
-  line-height: 46px; /* Altura de línea */
-  color: #333; /* Color de texto */
-  /* Agrega más estilos según tus necesidades */
-}
-@media only screen and (max-width: 767px) {
-  /* Ajusta el tamaño del texto para pantallas más pequeñas */
-  .titulo-videos {
-    font-size: 26px; /* Puedes ajustar este valor según sea necesario */
-    line-height: 36px; /* Ajusta el line-height si es necesario */
-    padding-bottom: 15px; /* Ajusta el padding-bottom si es necesario */
-  }
-  .contenedor-videos h4 {
-    font-size: 16px; /* Tamaño de fuente */
-    line-height: 16px; /* Altura de línea */
-    color: #333; /* Color de texto */
-    /* Agrega más estilos según tus necesidades */
-  }
-}
+
 
 /* fin Estilos para el video incrustado */
+
+/* inicio 3section Estilos para el video incrustado */
+
+.item-publicidad img {
+  width: 100%;  /* Asegura que la imagen ocupe todo el ancho del contenedor */
+  height: 400px; /* Mantiene las proporciones de la imagen */
+  object-fit: cover; /* Ajusta la imagen para cubrir el contenedor sin cortarse */
+}
+.item-publicidad {
+  width: 100%; /* O una anchura fija si es necesario */
+  height: 400px; /* Ajusta esta altura según tus necesidades */
+  overflow: hidden; /* Oculta cualquier parte de la imagen que exceda este contenedor */
+}
+
+.my-custom-container {
+  width: 100%;  /* Asegura que ocupe todo el ancho disponible por defecto */
+  margin-right: auto;
+  margin-left: auto;
+  max-width: 1300px;  /* Establece un ancho máximo si lo deseas */
+}
+.my-custom-container_play {
+  width: 100%;  /* Asegura que ocupe todo el ancho disponible por defecto */
+  margin-right: auto;
+  margin-left: auto;
+  max-width: 1500px; 
+}
+.my-custom-container_carrusel{
+  width: 100%;  /* Asegura que ocupe todo el ancho disponible por defecto */
+  margin-right: auto;
+  margin-left: auto;
+  max-width: 1900px; 
+}

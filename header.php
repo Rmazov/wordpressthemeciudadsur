@@ -9,11 +9,12 @@ $theme_dir = get_template_directory_uri();
     <title>CiudadSur-NuestrasHistorias</title>
 
 
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!--<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">-->
     <meta name="CiudadSur es un medio de comunicación digital que informa sobre los municipios de Itagüí, Envigado, Medellin Caldas, La Estrella,Sabaneta, en Colombia. Ofrece noticias, reportajes, galerías fotográficas y multimedia sobre temas de actualidad, cultura, deportes, entretenimiento y sociedad.">
     <meta content="Noticias Envigado" name="Envigado">
     <meta content="Noticas valle del aburra" name="Noticas Valle del Aburra">
     <meta content="Periodismo Independiente" name="Periodismo Independiente">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
     
      <!-- Etiquetas Open Graph para Facebook -->
     <meta property="og:url" content="<?php echo get_permalink(); ?>" />
