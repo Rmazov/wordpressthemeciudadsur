@@ -1,23 +1,16 @@
 <?php /* Template Name: reportajegrafico */ ?>
-
-
 <?php
 get_header();
 ?>
-
-
 <?php
 $args = array(
     'post_type'      => 'publicidad',
     'posts_per_page' => 2,
 );
-
-
 $query = new WP_Query($args);
-
 if ($query->have_posts()) :
     ?>
-    <div class="container-fluid">
+    <div class="my-custom-container_play">
         <div class="row">
             <?php
             while ($query->have_posts()) : $query->the_post();
@@ -28,8 +21,7 @@ if ($query->have_posts()) :
                         <div class="image-container">
                             <?php if (has_post_thumbnail()) : ?>
                                 <?php
-                               
-                                $excerpt = get_the_excerpt();
+                            $excerpt = get_the_excerpt();
                                 ?>
                                 <a href="<?php echo esc_url($excerpt); ?>" >
                                     <img src="<?php the_post_thumbnail_url(); ?>" alt="<?php the_title(); ?>" class="image">
@@ -44,17 +36,14 @@ if ($query->have_posts()) :
             <?php endwhile; ?>
         </div>
     </div>
-
     <?php
     wp_reset_postdata(); // Restablecer los datos del post al original
 endif;
 ?>
-
 <!-- News With Sidebar Start -->
 <?php
     // Obtener la URL del post actual
     $current_post_url = get_permalink();
-
     // Enlaces a las redes sociales con la URL del post actual
     ?>
 <div class="container-fluid ">
@@ -69,28 +58,22 @@ endif;
                     <?php endif; ?>
                     <?php $thumbnail_url = get_the_post_thumbnail_url(); ?>
                         <img class="img-fluid w-100" src="<?php echo esc_url($thumbnail_url); ?>" style="object-fit: cover;">
-                  
                         <div class="d-flex justify-content-end align-items-center">
                         <p class="mt-2 small"><?the_post_thumbnail_caption()?></p>
-               
                     </div>
-                   
-  <div class="container-fluid">
-      <div class="row">
+<div class="container-fluid">
+     <div class="row">
         <div class="col text-center">
             <hr class="gradient-line">
                </div>
       </div>
   </div>
-
-
-
-    <div class="container">
+<div class="container">
   <div class="row">
     <div class="col-md-6">
       <!-- Contenido de la primera columna -->
       <h4 class=" font-weight-bold "><?php the_author(); ?></h4>
-      <a id="categoryNews">
+     <a id="categoryNews">
                                         <?php $categories = get_the_category();
                                 if ($categories) {
                                 echo '<span class="category-name small">' . $categories[0]->name . '</span>';
@@ -102,33 +85,27 @@ endif;
     <div class="row contenedor_compartir">
     <p class="boton_compartir font-weight-bold ">COMPARTIR</p>
     </div>
-      <!-- Contenido de la segunda columna -->
-      <div class="contenedor_redes">
+<!-- Contenido de la segunda columna -->
+   <div class="contenedor_redes">
       <a class="btn text-black btn-floating "  href="https://web.facebook.com/sharer/sharer.php?u=<?php echo esc_url($current_post_url); ?>" target="_blank" role="button"><i class="fab fa-facebook-f"></i></a>
         <a class="btn text-black btn-floating "  href="https://twitter.com/intent/tweet?url=<?php echo esc_url($current_post_url); ?>" target="_blank" role="button"><i class="fab fa-twitter"></i></a>
         <a class="btn text-black  btn-floating "  href="https://wa.me/?text=<?php echo urlencode($current_post_url); ?>" target="_blank" role="button"><i class="fab fa-whatsapp"></i></a>
-        
-    </div>
-           
-    </div>
+     </div>
+     </div>
   </div>
 </div>
                         <div class="position-relative">
                         <br>  
                             <div>
-                                      <p><?php the_content(  );?></p>
+                           <p><?php the_content(  );?></p>
                             </div>
                         </div>
                     </div>
                     <!-- News Detail End -->
-
                 </div>
-
                 <div class="col-lg-4 pt-3 pt-lg-0">
                 <section class="indiviaul-right-bar">
-  
-                       <div class="pb-3">
-                          
+                        <div class="pb-3">
  <?php
 // Consulta para obtener las dos últimas publicidades
 $args_publicidad = array(
@@ -136,9 +113,7 @@ $args_publicidad = array(
     'posts_per_page' => 1, // Obtener solo 1 publicidad
     'offset'         => 3, // Saltar la primera publicidad
 );
-
 $query_publicidad = new WP_Query($args_publicidad);
-
 if ($query_publicidad->have_posts()) :
     while ($query_publicidad->have_posts()) : $query_publicidad->the_post();
         ?>
@@ -155,13 +130,11 @@ if ($query_publicidad->have_posts()) :
 endif;
 ?>
 </div>
-
 <!-- Popular News Start -->
 <div class="pb-3">
     <div class="bg-light py-2 px-4 mb-3">
         <h3 class="m-0">Noticias</h3>
     </div>
-                     
     <?php wp_reset_postdata(); ?>
 <?php
 $current_post_id = get_the_ID(); // Obtiene el ID del post actual
@@ -190,7 +163,6 @@ while ($query->have_posts()) :
         </div>
     </div>
 <?php endwhile; ?>
-
 </div>
 </section>
 </div>
@@ -218,7 +190,6 @@ $current_post_id = get_the_ID();?>
 );
 $query = new WP_Query( $args );
 ?>
- 
   <section class="container mt-4">
     <div class="row">
         <?php
@@ -231,16 +202,13 @@ $query = new WP_Query( $args );
                         <?php
                         // Obtener la URL de la imagen destacada (si está configurada)
                         $thumbnail_url = get_the_post_thumbnail_url();
-
                         if ($thumbnail_url) :
                         ?>
                             <img src="<?php echo esc_url($thumbnail_url); ?>" class="card-img-top-videos" alt="<?php the_title(); ?>">
                         <?php endif; ?>
-
                         <div class="card-videos">
                         <h5 class="card-title "><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h5>
-                           
-                        </div>
+                          </div>
                     </div>
                 </div>
             <?php
@@ -253,7 +221,6 @@ $query = new WP_Query( $args );
         ?>
     </div>
 </section>
-
 <?php
 get_footer();
 ?>

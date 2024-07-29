@@ -9,7 +9,7 @@ $query = new WP_Query($args);
 
 if ($query->have_posts()) :
     ?>
-    <div class="container-fluid">
+    <div class="my-custom-container_play">
         <div class="row">
             <?php
             while ($query->have_posts()) : $query->the_post();

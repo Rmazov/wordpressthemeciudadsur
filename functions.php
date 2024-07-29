@@ -12,7 +12,6 @@
 
     }
         add_action('wp_enqueue_scripts', 'wpbootstrap_enqueue_styles');
-  
 
 
 function agregar_carousel_js() {
@@ -21,25 +20,18 @@ function agregar_carousel_js() {
    
     wp_enqueue_script( 'custom-script', get_template_directory_uri() . '/assets/js/script.js', array(), '1.0', true );
 
-  
-
- 
 }
 
   
   add_action('wp_enqueue_scripts', 'agregar_carousel_js');
   
 
-
-
 function plz_analytics(){
     ?>
     
     <?php
 }
-
 add_action("wp_body_open","plz_analytics");
-
 
 function theme_supports(){
     add_theme_support('title-tag');
@@ -50,11 +42,8 @@ function theme_supports(){
     array(
         "width" => 10,
         "height" => 10,
-      
-    )
-    
+   )
     );
-    
 }
 
 add_action("after_setup_theme","theme_supports");
@@ -67,9 +56,7 @@ function plz_add_menus(){
         )
     );
 }
-
 add_action("after_setup_theme", "plz_add_menus");
-
 
 function ricardo_sidebar(){
     register_sidebar(  
@@ -80,7 +67,6 @@ function ricardo_sidebar(){
         'after_title'=> '',
         'before_widget'=> 'hola',
         'after_widget'=> ''
-
         )
     );
 }
@@ -99,9 +85,7 @@ function share_post_info() {
     echo '<meta property="og:image" content="' . $featured_image[0] . '">';
   }
 }
-
 add_action('wp_head', 'share_post_info');
-
 
 // Register Custom Post Type
 function publicidad() {
@@ -133,9 +117,6 @@ function publicidad() {
 
 }
 add_action( 'init', 'publicidad', 0 );
-
-
-
 
 // Cambiar la plantilla de un post específico basado en la categoría "reportajes-graficos"
 function custom_single_template_repo($single_template) {
@@ -207,4 +188,70 @@ function custom_single_template($single_template) {
 }
 
 add_filter('single_template', 'custom_single_template');
+
+function my_custom_post_type() {
+    $labels = array(
+        'name'               => _x( 'Daily Posts', 'post type general name' ),
+        'singular_name'      => _x( 'Daily Post', 'post type singular name' ),
+        'menu_name'          => _x( 'Daily Posts', 'admin menu' ),
+        'name_admin_bar'     => _x( 'Daily Post', 'add new on admin bar' ),
+        'add_new'            => _x( 'Add New', 'daily post' ),
+        'add_new_item'       => __( 'Add New Daily Post' ),
+        'new_item'           => __( 'New Daily Post' ),
+        'edit_item'          => __( 'Edit Daily Post' ),
+        'view_item'          => __( 'View Daily Post' ),
+        'all_items'          => __( 'All Daily Posts' ),
+        'search_items'       => __( 'Search Daily Posts' ),
+        'parent_item_colon'  => __( 'Parent Daily Posts:' ),
+        'not_found'          => __( 'No daily posts found.' ),
+        'not_found_in_trash' => __( 'No daily posts found in Trash.' )
+    );
+
+    $args = array(
+        'labels'             => $labels,
+        'public'             => true,
+        'publicly_queryable' => true,
+        'show_ui'            => true,
+        'show_in_menu'       => true,
+        'query_var'          => true,
+        'rewrite'            => array( 'slug' => 'daily-post' ),
+        'capability_type'    => 'post',
+        'has_archive'        => true,
+        'hierarchical'       => false,
+        'menu_position'      => null,
+        'supports'           => array( 'title', 'editor', 'author', 'thumbnail', 'excerpt', 'comments' )
+    );
+
+    register_post_type( 'daily_post', $args );
+}
+
+add_action( 'init', 'my_custom_post_type' );
+
+function get_daily_post() {
+    // Intentar obtener el ID de la transiencia.
+    $post_id = get_transient( 'daily_post_id' );
+
+    // Si no hay una transiencia, o ha expirado.
+    if ( false === $post_id ) {
+        // Obtener todas las publicaciones del Custom Post Type.
+        $args = array(
+            'post_type'      => 'daily_post',
+            'posts_per_page' => -1,
+            'fields'         => 'ids'
+        );
+        $all_posts = get_posts( $args );
+
+        // Si hay publicaciones.
+        if ( ! empty( $all_posts ) ) {
+            // Seleccionar una publicación aleatoria.
+            $post_id = $all_posts[ array_rand( $all_posts ) ];
+
+            // Guardar la ID de la publicación en una transiencia por 24 horas.
+            set_transient( 'daily_post_id', $post_id, DAY_IN_SECONDS );
+        }
+    }
+
+    return get_post( $post_id );
+}
+
 ?>

@@ -8,14 +8,11 @@ $theme_dir = get_template_directory_uri();
     <meta charset="utf-8">
     <title>CiudadSur-NuestrasHistorias</title>
 
-
     <!--<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">-->
-    <meta name="CiudadSur es un medio de comunicación digital que informa sobre los municipios de Itagüí, Envigado, Medellin Caldas, La Estrella,Sabaneta, en Colombia. Ofrece noticias, reportajes, galerías fotográficas y multimedia sobre temas de actualidad, cultura, deportes, entretenimiento y sociedad.">
-    <meta content="Noticias Envigado" name="Envigado">
-    <meta content="Noticas valle del aburra" name="Noticas Valle del Aburra">
-    <meta content="Periodismo Independiente" name="Periodismo Independiente">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
     
+    <meta name="description" content="CiudadSur es un medio de comunicación digital que informa sobre los municipios de Itagüí, Envigado, Medellin, Caldas, La Estrella y Sabaneta en Colombia. Ofrece noticias, reportajes, galerías fotográficas y multimedia sobre temas de actualidad, cultura, deportes, entretenimiento y sociedad.">
+    <meta name="keywords" content="Noticias Envigado, Noticias Valle del Aburra, Periodismo Independiente, Cultura, Deportes, Entretenimiento">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
      <!-- Etiquetas Open Graph para Facebook -->
     <meta property="og:url" content="<?php echo get_permalink(); ?>" />
     <meta property="og:type" content="article" />
@@ -70,8 +67,6 @@ $theme_dir = get_template_directory_uri();
     Municipios
 </a>
 
-
-
     <div class="dropdown-menu dropdown-column" aria-labelledby="navbarDropdown">
     <div class="row municipios-menu">
         <div class="col-12 col-md-2">
@@ -98,246 +93,126 @@ $theme_dir = get_template_directory_uri();
               );
             $query = new WP_Query( $args );
 ?>
-  <?php $query->the_post();?>
- 
-  <div class="row">
-    <div class="col-md-4 mb-4">
-        <div class="card position-relative overflow-hidden">
-            <div class="image-noticias">
-                <img src="<?php the_post_thumbnail_url();?>" alt="...">
+ <div class="row">
+        <?php while ($query->have_posts()) : $query->the_post(); ?>
+            <div class="col-md-4 mb-4">
+                <div class="card position-relative overflow-hidden">
+                    <div class="image-noticias">
+                        <img src="<?php the_post_thumbnail_url(); ?>" alt="<?php the_title(  )?>">
+                    </div>
+                    <div class="card-img-overlay d-flex align-items-end w-100">
+                        <a href="<?php the_permalink(); ?>" class="noticiasTitulo text-white mb-0"><?php the_title(); ?></a>
+                    </div>
+                </div>
             </div>
-            <div class="card-img-overlay d-flex align-items-end w-100">
-               
-                <a href="<?php the_permalink(); ?>" class="noticiasTitulo text-white mb-0"><?php the_title(); ?></a>
-
-            </div>
-        </div>
+        <?php endwhile; ?>
     </div>
-    <?php $query->the_post();?>
-    <div class="col-md-4 mb-4">
-        <div class="card position-relative overflow-hidden">
-            <div class="image-noticias">
-                <img src="<?php the_post_thumbnail_url();?>" class="noticias" alt="...">
-            </div>
-            <div class="card-img-overlay d-flex align-items-end w-100">
-            <a href="<?php the_permalink(); ?>" class="noticiasTitulo text-white mb-0"><?php the_title(); ?></a>
-
-            </div>
-        </div>
-    </div>
-    <?php $query->the_post();?>
-    <div class="col-md-4 mb-4">
-        <div class="card position-relative overflow-hidden">
-            <div class="image-noticias">
-                <img src="<?php the_post_thumbnail_url();?>" class="noticias" alt="...">
-            </div>
-            <div class="card-img-overlay d-flex align-items-end w-100">
-            <a href="<?php the_permalink(); ?>" class="noticiasTitulo text-white mb-0"><?php the_title(); ?></a>
-
-            </div>
-        </div>
-    </div>
-</div>
-
-
-            </section>
-            <section class="Envigado" style="display: none;">
-            <?php wp_reset_postdata();?>
-              <?php $args = array(
-                'post_type' => 'post',
-              'posts_per_page' => 3,
-            'category_name' => 'envigado'
-              );
-            $query = new WP_Query( $args );
-?>
-  <?php $query->the_post();?>
-
-  <div class="row">
-    <div class="col-md-4 mb-4">
-        <div class="card position-relative overflow-hidden">
-            <div class="image-noticias">
-                <img src="<?php the_post_thumbnail_url();?>" alt="...">
-            </div>
-            <div class="card-img-overlay d-flex align-items-end w-100">
-            <a href="<?php the_permalink(); ?>" class="noticiasTitulo text-white mb-0"><?php the_title(); ?></a>
-
-            </div>
-        </div>
-    </div>
-    <?php $query->the_post();?>
-    <div class="col-md-4 mb-4">
-        <div class="card position-relative overflow-hidden">
-            <div class="image-noticias">
-                <img src="<?php the_post_thumbnail_url();?>" class="noticias" alt="...">
-            </div>
-            <div class="card-img-overlay d-flex align-items-end w-100">
-            <a href="<?php the_permalink(); ?>" class="noticiasTitulo text-white mb-0"><?php the_title(); ?></a>
-
-            </div>
-        </div>
-    </div>
-    <?php $query->the_post();?>
-    <div class="col-md-4 mb-4">
-        <div class="card position-relative overflow-hidden">
-            <div class="image-noticias">
-                <img src="<?php the_post_thumbnail_url();?>" class="noticias" alt="...">
-            </div>
-            <div class="card-img-overlay d-flex align-items-end w-100">
-            <a href="<?php the_permalink(); ?>" class="noticiasTitulo text-white mb-0"><?php the_title(); ?></a>
-
-            </div>
-        </div>
-    </div>
-</div>
-
-            </section>
-            <section class="Sabaneta" style="display: none;">
-            <?php wp_reset_postdata();?>
-              <?php $args = array(
-                'post_type' => 'post',
-              'posts_per_page' => 3,
-            'category_name' => 'sabaneta'
-              );
-            $query = new WP_Query( $args );
-?>
-  <?php $query->the_post();?>
-
-  <div class="row">
-    <div class="col-md-4 mb-4">
-        <div class="card position-relative overflow-hidden">
-            <div class="image-noticias">
-                <img src="<?php the_post_thumbnail_url();?>" alt="...">
-            </div>
-            <div class="card-img-overlay d-flex align-items-end w-100">
-            <a href="<?php the_permalink(); ?>" class="noticiasTitulo text-white mb-0"><?php the_title(); ?></a>
-
-            </div>
-        </div>
-    </div>
-    <?php $query->the_post();?>
-    <div class="col-md-4 mb-4">
-        <div class="card position-relative overflow-hidden">
-            <div class="image-noticias">
-                <img src="<?php the_post_thumbnail_url();?>" class="noticias" alt="...">
-            </div>
-            <div class="card-img-overlay d-flex align-items-end w-100">
-            <a href="<?php the_permalink(); ?>" class="noticiasTitulo text-white mb-0"><?php the_title(); ?></a>
-
-            </div>
-        </div>
-    </div>
-    <?php $query->the_post();?>
-    <div class="col-md-4 mb-4">
-        <div class="card position-relative overflow-hidden">
-            <div class="image-noticias">
-                <img src="<?php the_post_thumbnail_url();?>" class="noticias" alt="...">
-            </div>
-            <div class="card-img-overlay d-flex align-items-end w-100">
-            <a href="<?php the_permalink(); ?>" class="noticiasTitulo text-white mb-0"><?php the_title(); ?></a>
-
-            </div>
-        </div>
-    </div>
-</div>
-
-            </section>
-            <section class="Medellin" style="display: none;">
-            <?php wp_reset_postdata();?>
-              <?php $args = array(
-                'post_type' => 'post',
-              'posts_per_page' => 3,
-            'category_name' => 'medellin'
-              );
-            $query = new WP_Query( $args );
-?>
-  <?php $query->the_post();?>
-
-  <div class="row">
-    <div class="col-md-4 mb-4">
-        <div class="card position-relative overflow-hidden">
-            <div class="image-noticias">
-                <img src="<?php the_post_thumbnail_url();?>" alt="...">
-            </div>
-            <div class="card-img-overlay d-flex align-items-end w-100">
-            <a href="<?php the_permalink(); ?>" class="noticiasTitulo text-white mb-0"><?php the_title(); ?></a>
-
-            </div>
-        </div>
-    </div>
-    <?php $query->the_post();?>
-    <div class="col-md-4 mb-4">
-        <div class="card position-relative overflow-hidden">
-            <div class="image-noticias">
-                <img src="<?php the_post_thumbnail_url();?>" class="noticias" alt="...">
-            </div>
-            <div class="card-img-overlay d-flex align-items-end w-100">
-            <a href="<?php the_permalink(); ?>" class="noticiasTitulo text-white mb-0"><?php the_title(); ?></a>
-
-            </div>
-        </div>
-    </div>
-    <?php $query->the_post();?>
-    <div class="col-md-4 mb-4">
-        <div class="card position-relative overflow-hidden">
-            <div class="image-noticias">
-                <img src="<?php the_post_thumbnail_url();?>" class="noticias" alt="...">
-            </div>
-            <div class="card-img-overlay d-flex align-items-end w-100">
-            <a href="<?php the_permalink(); ?>" class="noticiasTitulo text-white mb-0"><?php the_title(); ?></a>
-
-            </div>
-        </div>
-    </div>
-</div>
+    <?php wp_reset_postdata(); ?>
 </section>
+<section class="Envigado" style="display: none;">
+    <?php 
+    wp_reset_postdata();
+    $args = array(
+        'post_type' => 'post',
+        'posts_per_page' => 3,
+        'category_name' => 'envigado'
+    );
+    $query = new WP_Query($args);
+    ?>
+    <div class="row">
+        <?php while ($query->have_posts()) : $query->the_post(); ?>
+            <div class="col-md-4 mb-4">
+                <div class="card position-relative overflow-hidden">
+                    <div class="image-noticias">
+                        <img src="<?php the_post_thumbnail_url(); ?>" alt="<?php the_title(); ?>">
+                    </div>
+                    <div class="card-img-overlay d-flex align-items-end w-100">
+                        <a href="<?php the_permalink(); ?>" class="noticiasTitulo text-white mb-0"><?php the_title(); ?></a>
+                    </div>
+                </div>
+            </div>
+        <?php endwhile; ?>
+    </div>
+    <?php wp_reset_postdata(); ?>
+</section>
+            <section class="Sabaneta" style="display: none;">
+    <?php 
+    wp_reset_postdata();
+    $args = array(
+        'post_type' => 'post',
+        'posts_per_page' => 3,
+        'category_name' => 'sabaneta'
+    );
+    $query = new WP_Query($args);
+    ?>
+    <div class="row">
+        <?php while ($query->have_posts()) : $query->the_post(); ?>
+            <div class="col-md-4 mb-4">
+                <div class="card position-relative overflow-hidden">
+                    <div class="image-noticias">
+                        <img src="<?php the_post_thumbnail_url(); ?>" alt="<?php the_title(); ?>">
+                    </div>
+                    <div class="card-img-overlay d-flex align-items-end w-100">
+                        <a href="<?php the_permalink(); ?>" class="noticiasTitulo text-white mb-0"><?php the_title(); ?></a>
+                    </div>
+                </div>
+            </div>
+        <?php endwhile; ?>
+    </div>
+    <?php wp_reset_postdata(); ?>
+</section>
+            <section class="Medellin" style="display: none;">
+    <?php 
+    wp_reset_postdata();
+    $args = array(
+        'post_type' => 'post',
+        'posts_per_page' => 3,
+        'category_name' => 'medellin'
+    );
+    $query = new WP_Query($args);
+    ?>
+    <div class="row">
+        <?php while ($query->have_posts()) : $query->the_post(); ?>
+            <div class="col-md-4 mb-4">
+                <div class="card position-relative overflow-hidden">
+                    <div class="image-noticias">
+                        <img src="<?php the_post_thumbnail_url(); ?>" alt="<?php the_title(); ?>">
+                    </div>
+                    <div class="card-img-overlay d-flex align-items-end w-100">
+                        <a href="<?php the_permalink(); ?>" class="noticiasTitulo text-white mb-0"><?php the_title(); ?></a>
+                    </div>
+                </div>
+            </div>
+        <?php endwhile; ?>
+    </div>
+    <?php wp_reset_postdata(); ?>
+</section>
+
 <section class="Caldas" style="display: none;">
-            <?php wp_reset_postdata();?>
-              <?php $args = array(
-                'post_type' => 'post',
-              'posts_per_page' => 3,
-            'category_name' => 'caldas'
-              );
-            $query = new WP_Query( $args );
-?>
-  <?php $query->the_post();?>
-
-  <div class="row">
-    <div class="col-md-4 mb-4">
-        <div class="card position-relative overflow-hidden">
-            <div class="image-noticias">
-                <img src="<?php the_post_thumbnail_url();?>" alt="...">
+    <?php 
+    wp_reset_postdata();
+    $args = array(
+        'post_type' => 'post',
+        'posts_per_page' => 3,
+        'category_name' => 'caldas'
+    );
+    $query = new WP_Query($args);
+    ?>
+    <div class="row">
+        <?php while ($query->have_posts()) : $query->the_post(); ?>
+            <div class="col-md-4 mb-4">
+                <div class="card position-relative overflow-hidden">
+                    <div class="image-noticias">
+                        <img src="<?php the_post_thumbnail_url(); ?>" alt="<?php the_title(); ?>">
+                    </div>
+                    <div class="card-img-overlay d-flex align-items-end w-100">
+                        <a href="<?php the_permalink(); ?>" class="noticiasTitulo text-white mb-0"><?php the_title(); ?></a>
+                    </div>
+                </div>
             </div>
-            <div class="card-img-overlay d-flex align-items-end w-100">
-            <a href="<?php the_permalink(); ?>" class="noticiasTitulo text-white mb-0"><?php the_title(); ?></a>
-
-            </div>
-        </div>
+        <?php endwhile; ?>
     </div>
-    <?php $query->the_post();?>
-    <div class="col-md-4 mb-4">
-        <div class="card position-relative overflow-hidden">
-            <div class="image-noticias">
-                <img src="<?php the_post_thumbnail_url();?>" class="noticias" alt="...">
-            </div>
-            <div class="card-img-overlay d-flex align-items-end w-100">
-            <a href="<?php the_permalink(); ?>" class="noticiasTitulo text-white mb-0"><?php the_title(); ?></a>
-
-            </div>
-        </div>
-    </div>
-    <?php $query->the_post();?>
-    <div class="col-md-4 mb-4">
-        <div class="card position-relative overflow-hidden">
-            <div class="image-noticias">
-                <img src="<?php the_post_thumbnail_url();?>" class="noticias" alt="...">
-            </div>
-            <div class="card-img-overlay d-flex align-items-end w-100">
-            <a href="<?php the_permalink(); ?>" class="noticiasTitulo text-white mb-0"><?php the_title(); ?></a>
-
-            </div>
-        </div>
-    </div>
-</div>
+    <?php wp_reset_postdata(); ?>
 </section>
 <section class="Laestrella" style="display: none;">
             <?php wp_reset_postdata();?>
@@ -351,42 +226,20 @@ $theme_dir = get_template_directory_uri();
   <?php $query->the_post();?>
 
   <div class="row">
-    <div class="col-md-4 mb-4">
-        <div class="card position-relative overflow-hidden">
-            <div class="image-noticias">
-                <img src="<?php the_post_thumbnail_url();?>" alt="...">
+        <?php while ($query->have_posts()) : $query->the_post(); ?>
+            <div class="col-md-4 mb-4">
+                <div class="card position-relative overflow-hidden">
+                    <div class="image-noticias">
+                        <img src="<?php the_post_thumbnail_url(); ?>" alt="<?php the_title(); ?>">
+                    </div>
+                    <div class="card-img-overlay d-flex align-items-end w-100">
+                        <a href="<?php the_permalink(); ?>" class="noticiasTitulo text-white mb-0"><?php the_title(); ?></a>
+                    </div>
+                </div>
             </div>
-            <div class="card-img-overlay d-flex align-items-end w-100">
-            <a href="<?php the_permalink(); ?>" class="noticiasTitulo text-white mb-0"><?php the_title(); ?></a>
-
-            </div>
-        </div>
+        <?php endwhile; ?>
     </div>
-    <?php $query->the_post();?>
-    <div class="col-md-4 mb-4">
-        <div class="card position-relative overflow-hidden">
-            <div class="image-noticias">
-                <img src="<?php the_post_thumbnail_url();?>" class="noticias" alt="...">
-            </div>
-            <div class="card-img-overlay d-flex align-items-end w-100">
-            <a href="<?php the_permalink(); ?>" class="noticiasTitulo text-white mb-0"><?php the_title(); ?></a>
-
-            </div>
-        </div>
-    </div>
-    <?php $query->the_post();?>
-    <div class="col-md-4 mb-4">
-        <div class="card position-relative overflow-hidden">
-            <div class="image-noticias">
-                <img src="<?php the_post_thumbnail_url();?>" class="noticias" alt="...">
-            </div>
-            <div class="card-img-overlay d-flex align-items-end w-100">
-            <a href="<?php the_permalink(); ?>" class="noticiasTitulo text-white mb-0"><?php the_title(); ?></a>
-
-            </div>
-        </div>
-    </div>
-</div>
+    <?php wp_reset_postdata(); ?>
 </section>
         </div>
     </div>
@@ -458,6 +311,3 @@ $theme_dir = get_template_directory_uri();
 </div>
 </nav>
 </header>
-
-
-      

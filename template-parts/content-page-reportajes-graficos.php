@@ -1,18 +1,13 @@
 <?php /* Template Name: reportajegrafico */ ?>
-
-
 <?php
 get_header();
 ?>
-
 
 <?php
 $args = array(
     'post_type'      => 'publicidad',
     'posts_per_page' => 2,
 );
-
-
 $query = new WP_Query($args);
 
 if ($query->have_posts()) :

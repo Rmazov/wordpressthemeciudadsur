@@ -300,62 +300,57 @@ $query = new WP_Query( $args );
     </div>
  </div>
  <?php wp_reset_postdata();?>
-<?php $args = array(
+ <?php 
+$args = array(
     'post_type' => 'post',
     'posts_per_page' => 2,
     'category_name' => 'politica'
 );
 $query = new WP_Query( $args );
 ?>
-<?php $query->the_post();?>
-        <div class="col-md-8 mt-4 mb-1 mb-md-3">
+<?php if ( $query->have_posts() ) : ?>
+    <div class="col-md-8 mt-4 mb-1 mb-md-3">
         <div id="carrucelEdiciones1" class="carousel slide" data-ride="carousel">
-  <ol class="carousel-indicators">
-    <li data-target="#carrucelEdiciones1" data-slide-to="0" class="active"></li>
-    <li data-target="#carrucelEdiciones1" data-slide-to="1"></li>
-    </ol>
-  <div class="carousel-inner ediconesCarrusel" role="listbox">
-      <div class="carousel-item active edicionesItemImg" >
-      <img class="img-fluid" src="<?php the_post_thumbnail_url(  );?>" alt="Noticias Politica" >
-      <div class="carousel-caption1">
-            <a id="tituloFecha">
-            <?php $categories = get_the_category();
-                    if ($categories) {
-                    echo '<span class="category-name1">' . $categories[0]->name . '</span>';
-                    } ?></a> <br>
-                <a id="titulo1" href="<?php the_permalink();?>"><?php the_title(  )?></a>
-                  <br>
-                  <a id="tituloFecha" href=""><?php the_date( );?></a>
+            <ol class="carousel-indicators">
+                <?php for ($i = 0; $i < $query->post_count; $i++): ?>
+                    <li data-target="#carrucelEdiciones1" data-slide-to="<?php echo $i; ?>" class="<?php echo $i === 0 ? 'active' : ''; ?>"></li>
+                <?php endfor; ?>
+            </ol>
+            <div class="carousel-inner ediconesCarrusel" role="listbox">
+                <?php $first = true; ?>
+                <?php while ( $query->have_posts() ) : $query->the_post(); ?>
+                    <div class="carousel-item edicionesItemImg <?php echo $first ? 'active' : ''; ?>">
+                        <img class="img-fluid" src="<?php the_post_thumbnail_url(); ?>" alt="Noticias Politica">
+                        <div class="carousel-caption1">
+                            <a id="tituloFecha">
+                                <?php $categories = get_the_category();
+                                if ($categories) {
+                                    echo '<span class="category-name1">' . $categories[0]->name . '</span>';
+                                } ?>
+                            </a>
+                            <br>
+                            <a id="titulo1" href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+                            <br>
+                            <a id="tituloFecha" href=""><?php the_date(); ?></a>
+                        </div>
+                    </div>
+                    <?php $first = false; ?>
+                <?php endwhile; ?>
+            </div>
+            <a class="carousel-control-prev" href="#carrucelEdiciones1" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Anterior</span>
+            </a>
+            <a class="carousel-control-next" href="#carrucelEdiciones1" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Siguiente</span>
+            </a>
         </div>
     </div>
-    <?php $query->the_post();?>
-      <div class="carousel-item edicionesItemImg">
-      <img class="img-fluid " src="<?php the_post_thumbnail_url(  );?>" alt="Noticias Politica" >
-      <div class="carousel-caption1">
-            <a id="tituloFecha">
-            <?php $categories = get_the_category();
-                    if ($categories) {
-                    echo '<span class="category-name1">' . $categories[0]->name . '</span>';
-                    } ?></a> <br>
-                <a id="titulo1" href="<?php the_permalink();?>"><?php the_title(  )?></a>
-                  <br>
-                  <a id="tituloFecha" href=""><?php the_date( );?></a>
-        </div>
-    </div>
-    <a class="carousel-control-prev" href="#carrucelEdiciones1" role="button" data-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="sr-only">Anterior</span>
-    </a>
-    <a class="carousel-control-next" href="#carrucelEdiciones1" role="button" data-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="sr-only">Siguiente</span>
-    </a>
-  </div>
- </div>
-        </div>
-      </div>
-    </div>
-  </div>
+<?php endif; ?>
+
+<?php wp_reset_postdata(); ?>
+
 </section>
 <section class="py-2 ">
   <div class="container">
@@ -384,7 +379,7 @@ $query = new WP_Query( $args );
       <div class="news-card">
         <div class="position-relative">
         <a href="<?php the_permalink();?>">
-          <img src="<?php the_post_thumbnail_url(  );?>" class="card-img-top" alt="News Image">
+          <img src="<?php the_post_thumbnail_url(  );?>" class="card-img-top" alt="<?php the_title(  )?>">
           <i class="play-icon fas fa-play-circle"></i>
           <div class="news-categoria" style="font-size: 13px;">
                     <?php $category = get_the_category(); ?>
@@ -486,49 +481,49 @@ $query = new WP_Query( $args );
         </div>
     </div>
 </div>
+
+<!--
+<section>
+<div class="container ">
+<?php
+$daily_post = get_daily_post();
+if ( $daily_post ) :
+    setup_postdata( $daily_post );
+    ?>
+    <h2><?php echo get_the_title( $daily_post ); ?></h2>
+    <div><?php echo get_the_content( $daily_post ); ?></div>
+    
+    <?php
+    wp_reset_postdata();
+endif;
+?>
+</div>
+</section>
+-->
+
 <div class="container titulo-section mb-5">
 <h4>REPORTAJES GRÁFICOS</h4>
 </div>
-    <?php $args = array(
+<?php 
+$args = array(
   'post_type' => 'post',
   'posts_per_page' => 4,
   'category_name' => 'reportajes-graficos'
 );
 $query = new WP_Query( $args );
 ?>
-  <?php $query->the_post();?>
-    <section class="container mt-5 mb-5">
-  <div class="row">
-    <!-- Columna 1 -->
-    <div class="col-md-3 contenedor-rgrafico">
-    <img class="img-fluid imagen-rgrafico " src="<?php the_post_thumbnail_url(  );?>" alt="Imagen 2" >
-      <div class="contenido-columna">
-      <a id="titulo-reportajes" href="<?php the_permalink();?>"><?php the_title(  )?></a>
-      </div>
+<?php if ( $query->have_posts() ) : ?>
+  <section class="container mt-5 mb-5">
+    <div class="row">
+      <?php while ( $query->have_posts() ) : $query->the_post(); ?>
+        <div class="col-md-3 contenedor-rgrafico">
+          <img class="img-fluid imagen-rgrafico" src="<?php the_post_thumbnail_url(); ?>" alt="<?php the_title(); ?>">
+          <div class="contenido-columna">
+            <a id="titulo-reportajes" href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+          </div>
+        </div>
+      <?php endwhile; ?>
     </div>
-    <?php $query->the_post();?>
-    <!-- Columna 2 -->
-    <div class="col-md-3 contenedor-rgrafico">
-    <img class=" imagen-rgrafico " src="<?php the_post_thumbnail_url(  );?>" alt="Imagen 2" >
-      <div class="contenido-columna">
-      <a id="titulo-reportajes" href="<?php the_permalink();?>"><?php the_title(  )?></a>
-      </div>
-    </div>
-    <?php $query->the_post();?>
-    <!-- Columna 3 -->
-    <div class="col-md-3 contenedor-rgrafico">
-    <img class="imagen-rgrafico " src="<?php the_post_thumbnail_url(  );?>" alt="Imagen 2" >
-      <div class="contenido-columna ">
-      <a id="titulo-reportajes" href="<?php the_permalink();?>"><?php the_title(  )?></a>
-      </div>
-    </div>
-    <?php $query->the_post();?>
-    <!-- Columna 4 -->
-    <div class="col-md-3 contenedor-rgrafico ">
-    <img class=" imagen-rgrafico " src="<?php the_post_thumbnail_url(  );?>" alt="Imagen 2" >
-      <div class="contenido-columna ">
-      <a id="titulo-reportajes" href="<?php the_permalink();?>"><?php the_title(  )?></a>
-      </div>
-    </div>
-  </div>
-</section>
+  </section>
+<?php endif; ?>
+<?php wp_reset_postdata(); ?>

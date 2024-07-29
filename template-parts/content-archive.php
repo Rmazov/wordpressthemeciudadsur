@@ -26,7 +26,7 @@ $query = new WP_Query($args);
 if ($query->have_posts()) :
     ?>
    
-    <div class="container-fluid ">
+    <div class="my-custom-container_play ">
         <div class="row">
             <?php
             while ($query->have_posts()) : $query->the_post();
@@ -101,12 +101,12 @@ $query = new WP_Query( $args );
 $query->the_post();
 ?>
 
-<section class="category-main">
+<section class=" category-main">
     <div class="container mt-5">
         <div class="row">
             <div class="col-md-6 contenedor-category p-0">
                 <div class="card img-category">
-                    <img class="d-block w-100" src="<?php the_post_thumbnail_url(); ?>" alt="Imagen 1">
+                    <img class="d-block w-100" src="<?php the_post_thumbnail_url(); ?>" alt="<?php the_title(  )?>">
                     <div class="card-body titulo-category">
                         <a id="category-titulo" href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
                     </div>
@@ -115,7 +115,7 @@ $query->the_post();
             <?php $query->the_post(); ?>
             <div class="col-md-6 contenedor-category p-0">
                 <div class="card img-category">
-                    <img class="d-block w-100" src="<?php the_post_thumbnail_url(); ?>" alt="Imagen 1">
+                    <img class="d-block w-100" src="<?php the_post_thumbnail_url(); ?>" alt="<?php the_title(  )?>">
                     <div class="card-body titulo-category">
                         <a id="category-titulo" href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
                     </div>
@@ -128,7 +128,7 @@ $query->the_post();
 <?php wp_reset_postdata();
 $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
 ?>
-<section class="category-section">
+<section class=" my-custom-container category-section">
 <?php
 
 $args = array(
@@ -206,7 +206,7 @@ endif;
     
     ?>
     </section>
-    <section class="category-right-bar mt-5">
+    <section class=" category-right-bar  mt-5">
 
                     
     <div class="pb-3 mt-5">
